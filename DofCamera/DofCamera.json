@@ -1,0 +1,212 @@
+{
+    "camera": {
+        "look_at": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "focal_distance": 0.5,
+        "lens_radius": 0.01,
+        "fov": 30.0,
+        "pos": [
+            -0.45,
+            0.1,
+            0.0
+        ],
+        "aspect": 1.7777778,
+        "type": "thin_lens",
+        "up": [
+            0.000000,
+            0.000000,
+            1.000000
+        ]
+    },    
+    "renderer": {
+        "width": 1280,
+        "height": 720,
+        "spp": 40,
+        "thread_count": 8,
+        "output": "result",
+        "type" : "path_tracer",
+        "depth": 10,
+        "direct_loop": 1,
+        "rr_depth": 10,
+        "rr_coef": 0.85
+    },
+    "post_process": [
+        {
+            "type": "oidn_denoise"
+        },        
+        {
+            "type": "tonemapping",
+            "lum": 1.0
+        },
+        {
+            "type": "linear_to_srgb"
+        }
+    ],    
+    "scene": {
+        "accelerator": {
+            "type": "bvh"
+        },
+        "materials":[
+            {
+                "name" : "lambert",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            }
+        ],
+        "render_objects": [
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        0.05,
+                        -0.05,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        0.1,
+                        -0.1,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        0.15,
+                        -0.15,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        0.2,
+                        -0.2,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        0.25,
+                        -0.25,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        0.3,
+                        -0.3,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        0.35,
+                        -0.35,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        -0.05,
+                        0.05,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        -0.1,
+                        0.1,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            },
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 0.02,
+                    "translation": [
+                        -0.15,
+                        0.15,
+                        0.0
+                    ]
+                },
+                "material": "lambert"
+            }                                                                                                                                              
+        ],
+        "lights": [
+            {
+                "type": "env",
+                "path": "../HDR/park_4k.hdr",
+                "rotation": [
+                    0,
+                    0,
+                    0
+                ]                
+            }
+        ]
+    }
+}

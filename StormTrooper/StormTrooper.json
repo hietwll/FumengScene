@@ -1,0 +1,276 @@
+{
+    "camera": {
+        "look_at": [
+            0.25,
+            -0.3,
+            0.0
+        ],
+        "focal_distance": 4.8,
+        "lens_radius": 0.1,
+        "fov": 35.000000,
+        "pos": [
+            -0.2,
+            -0.5,
+            5.5
+        ],
+        "aspect": 1.7777777778,
+        "type": "thin_lens",
+        "up": [
+            0.000000,
+            1.000000,
+            0.000000
+        ]
+    },    
+    "renderer": {
+        "width": 1280,
+        "height": 720,
+        "spp": 200,
+        "thread_count": 8,
+        "output": "result",
+        "type" : "path_tracer",
+        "depth": 10,
+        "direct_loop": 1,
+        "rr_depth": 10,
+        "rr_coef": 0.85
+    },
+    "post_process": [  
+        {
+            "type": "oidn_denoise"
+        },              
+        {
+            "type": "tonemapping",
+            "lum": 1.0
+        },
+        {
+            "type": "linear_to_srgb"
+        }      
+    ],    
+    "scene": {
+        "accelerator": {
+            "type": "embree"
+        },
+        "materials": [
+            {
+                "name" : "box",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                }                
+            },
+            {
+                "name" : "frame",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }                    
+            },
+            {
+                "name" : "helmets",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.001,
+                        0.001,
+                        0.001
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.7,
+                        0.7,
+                        0.7
+                    ]
+                },
+                "clearcoat": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "clearcoatGloss": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                        
+                }                                        
+            }            
+        ],
+        "render_objects": [
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/box.obj"
+                },
+                "material": "box"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/frame.obj"
+                },
+                "material": "frame"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/helmets.obj"
+                },
+                "material": "helmets"
+            },
+            {
+                "shape": {
+                    "type": "rectangle",
+                    "pa": [
+                        1.225934,
+                        2.998622,
+                        4.573376
+                    ],
+                    "pb": [
+                        -1.978162,
+                        2.998622,
+                        -0.324129
+                    ],
+                    "pc": [
+                        -1.42641,
+                        2.998622,
+                        -0.685102
+                    ],
+                    "pd": [
+                        1.777686,
+                        2.998622,
+                        4.212403
+                    ]
+                },
+                "emittance" : [
+                    4.0,
+                    4.0,
+                    4.0
+                ]
+            },
+            {
+                "shape": {
+                    "type": "rectangle",
+                    "pa": [
+                        -2.298571,
+                        2.998622,
+                        -0.813879
+                    ],
+                    "pb": [
+                        -4.950915,
+                        2.998622,
+                        -6.072357
+                    ],
+                    "pc": [
+                        -4.399163,
+                        2.998622,
+                        -6.43333
+                    ],
+                    "pd": [
+                        -1.746819,
+                        2.998622,
+                        -1.174852
+                    ]
+                },
+                "emittance" : [
+                    4.0,
+                    4.0,
+                    4.0
+                ]
+            },
+            {
+                "shape": {
+                    "type": "rectangle",
+                    "pa": [
+                        -5.823077,
+                        2.998622,
+                        -6.201134
+                    ],
+                    "pb": [
+                        -8.475420,
+                        2.998622,
+                        -11.459612
+                    ],
+                    "pc": [
+                        -7.923668,
+                        2.998622,
+                        -11.820586
+                    ],
+                    "pd": [
+                        -5.271325,
+                        2.998622,
+                        -6.562108
+                    ]
+                },
+                "emittance" : [
+                    4.0,
+                    4.0,
+                    4.0
+                ]
+            }                                                                      
+        ]
+    }
+}

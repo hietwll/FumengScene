@@ -1,0 +1,299 @@
+{
+    "camera": {
+        "look_at": [
+            0.0,
+            0.07,
+            0.0
+        ],
+        "focal_distance": 1.0,
+        "fov": 35.000000,
+        "pos": [
+            0.3,
+            0.11,
+            0.0
+        ],
+        "aspect": 1.7777777778,
+        "type": "pin_hole",
+        "up": [
+            0.000000,
+            1.000000,
+            0.000000
+        ]
+    },    
+    "renderer": {
+        "width": 1280,
+        "height": 720,
+        "spp": 40,
+        "thread_count": 8,
+        "output": "result",
+        "type" : "path_tracer",
+        "depth": 10,
+        "direct_loop": 1,
+        "rr_depth": 10,
+        "rr_coef": 0.85
+    },
+    "post_process": [
+        {
+            "type": "oidn_denoise"
+        },        
+        {
+            "type": "tonemapping",
+            "lum": 1.0
+        },
+        {
+            "type": "linear_to_srgb"
+        }
+    ],
+    "scene": {
+        "accelerator": {
+            "type": "embree"
+        },
+        "materials" : [
+            {
+                "name" : "head",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/01_Head_Base_Color.png"
+                },
+                "metallic": {
+                    "type": "image",
+                    "path": "texture/01_Head_MetallicRoughness.png"
+                },
+                "roughness": {
+                    "type": "image",
+                    "path": "texture/01_Head_MetallicRoughness.png"
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                }
+            },
+            {
+                "name" : "body",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/02_Body_Base_Color.png"
+                },
+                "metallic": {
+                    "type": "image",
+                    "path": "texture/02_Body_MetallicRoughness.png"
+                },
+                "roughness": {
+                    "type": "image",
+                    "path": "texture/02_Body_MetallicRoughness.png"
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                }
+            },
+            {
+                "name" : "base",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/03_Base_Base_Color.png"
+                },
+                "metallic": {
+                    "type": "image",
+                    "path": "texture/03_Base_MetallicRoughness.png"
+                },
+                "roughness": {
+                    "type": "image",
+                    "path": "texture/03_Base_MetallicRoughness.png"
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                }
+            },
+            {
+                "name" : "grid",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/grid.png"
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]                    
+                }
+            }                                    
+        ],
+        "render_objects": [
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/background.obj"
+                },
+                "material": "grid"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/head.obj",
+                    "translation": [
+                        0.017,
+                        0.107,
+                        -0.05
+                    ]                     
+                },
+                "material": "head"               
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/body.obj",
+                    "translation": [
+                        0.0,
+                        0.049,
+                        -0.05
+                    ]                    
+                },
+                "material": "body"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/base.obj",
+                    "translation": [
+                        0.0,
+                        0.0075,
+                        -0.05
+                    ]                    
+                },
+                "material": "base"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/head.obj",
+                    "translation": [
+                        0.017,
+                        0.107,
+                        0.05
+                    ]                    
+                },
+                "material": "head"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/body.obj",
+                    "translation": [
+                        0.0,
+                        0.049,
+                        0.05
+                    ]                    
+                },
+                "material": "body"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/base.obj",
+                    "translation": [
+                        0.0,
+                        0.0075,
+                        0.05
+                    ]                    
+                },
+                "material": "base"                
+            },
+            {
+                "shape": {
+                    "type": "rectangle",
+                    "pa": [
+                        -0.103555,
+                        0.284840,
+                        0.606827
+                    ],
+                    "pb": [
+                        -0.103555,
+                        0.465656,
+                        0.521355
+                    ],
+                    "pd": [
+                        0.096445,
+                        0.284840,
+                        0.606827
+                    ],
+                    "pc": [
+                        0.096445,
+                        0.465656,
+                        0.521355
+                    ]
+                },
+                "emittance": [
+                    40.0,
+                    41.0,
+                    41.0
+                ]                
+            },
+            {
+                "shape": {
+                    "type": "rectangle",
+                    "pa": [
+                        0.303145,
+                        0.461806,
+                        -0.450967
+                    ],
+                    "pb": [
+                        0.447143,
+                        0.461806,
+                        -0.306465
+                    ],
+                    "pd": [
+                        0.362568,
+                        0.280251,
+                        -0.510182
+                    ],
+                    "pc": [
+                        0.506566,
+                        0.280251,
+                        -0.36568
+                    ]
+                },
+                "emittance": [
+                    40.0,
+                    41.0,
+                    41.0
+                ]                
+            }                                                                        
+        ]
+    }
+}

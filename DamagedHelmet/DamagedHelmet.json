@@ -1,0 +1,126 @@
+{
+    "camera": {
+        "look_at": [
+            1.0,
+            0.0,
+            0.0
+        ],
+        "focal_distance": 1.0,
+        "fov": 34.000000,
+        "pos": [
+            -8.0,
+            0.0,
+            0.0
+        ],
+        "aspect": 1.7777777778,
+        "type": "pin_hole",
+        "up": [
+            0.000000,
+            0.000000,
+            1.000000
+        ]
+    },    
+    "renderer": {
+        "width": 1280,
+        "height": 720,
+        "spp": 40,
+        "thread_count": 8,
+        "output": "result",
+        "type" : "path_tracer",
+        "depth": 10,
+        "direct_loop": 1,
+        "rr_depth": 10,
+        "rr_coef": 0.85
+    },
+    "post_process": [
+        {
+            "type": "oidn_denoise"
+        },        
+        {
+            "type": "tonemapping",
+            "lum": 1.0
+        },
+        {
+            "type": "linear_to_srgb"
+        }
+    ],
+    "scene": {
+        "accelerator": {
+            "type": "embree"
+        },
+        "materials" : [
+            {
+                "name" : "helmet",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/basecolor.png"
+                },
+                "metallic": {
+                    "type": "image",
+                    "path": "texture/metallic_roughness.png"
+                },
+                "roughness": {
+                    "type": "image",
+                    "path": "texture/metallic_roughness.png"
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                }
+            }
+        ],
+        "render_objects": [
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/DamagedHelmet.obj",
+                    "rotation": [
+                        0,
+                        0,
+                        0
+                    ],
+                    "translation": [
+                        0,
+                        0,
+                        0
+                    ]
+                },
+                "material": "helmet",
+                "emittance" : [
+                    0.0,
+                    0.0,
+                    0.0
+                ]
+            }
+        ],
+        "lights": [
+            {
+                "type": "env",
+                "path": "../HDR/autumn_park_4k.hdr",
+                "rotation": [
+                    0.0,
+                    0.0,
+                    -75.0
+                ]                
+            },
+            {
+                "type": "directional",
+                "radiance": [
+                    10.0,
+                    10.0,
+                    10.0
+                ],
+                "direction": [
+                    1.0,
+                    0.0,
+                    -1.0
+                ]                
+            }
+        ]
+    }
+}

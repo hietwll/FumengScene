@@ -1,0 +1,1367 @@
+{
+    "camera": {
+        "look_at": [
+            -0.7776312828063965,
+            1.4423744678497314,
+            -0.07520569860935211
+        ],
+        "focal_distance": 4.8,
+        "lens_radius": 0.1,
+        "fov": 35.000000,
+        "pos": [
+            -1.690487027168274,
+            1.2715795040130615,
+            5.886528015136719
+        ],
+        "aspect": 1.7777777778,
+        "type": "pin_hole",
+        "up": [
+            0.000000,
+            1.000000,
+            0.000000
+        ]
+    },    
+    "renderer": {
+        "width": 1280,
+        "height": 720,
+        "spp": 100,
+        "thread_count": 8,
+        "output": "result",
+        "type" : "path_tracer",
+        "depth": 18,
+        "direct_loop": 1,
+        "rr_depth": 15,
+        "rr_coef": 0.85
+    },
+    "post_process": [    
+        {
+            "type": "oidn_denoise"
+        },         
+        {
+            "type": "tonemapping",
+            "lum": 1.0
+        },         
+        {
+            "type": "linear_to_srgb"
+        }        
+    ],    
+    "scene": {
+        "accelerator": {
+            "type": "embree"
+        },
+        "materials": [
+            {
+                "name" : "Walls",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.6540709733963013,
+                        0.6740800142288208,
+                        0.800000011920929
+                    ]
+                }
+            },
+            {
+                "name" : "Lectern",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/wood1.jpg"
+                }
+            },
+            {
+                "name" : "FlagRed",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.800000011920929,
+                        0.008213999681174755,
+                        0.0
+                    ]
+                }
+            },
+            {
+                "name" : "FlagWhite",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "name" : "FlagBase",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.7796609997749329,
+                        0.6531620025634766,
+                        0.3491879999637604
+                    ]
+                }
+            },
+            {
+                "name" : "ChalkHolder",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.800000011920929,
+                        0.6449009776115417,
+                        0.4121190011501312
+                    ]
+                }
+            },
+            {
+                "name" : "ProjectorScreen",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "name" : "StickyNote1",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.612066,
+                        0.612066,
+                        0.612066
+                    ]
+                }
+            },
+            {
+                "name" : "Whiteboard",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "name" : "StickyNote7",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }
+            },
+            {
+                "name" : "StickyNote8",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.612066,
+                        0.612066,
+                        0.612066
+                    ]
+                }
+            },
+            {
+                "name" : "Bin2",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.800000011920929,
+                        0.7175089716911316,
+                        0.19045600295066833
+                    ]
+                }
+            },
+            {
+                "name" : "Boxes2",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.800000011920929,
+                        0.7916420102119446,
+                        0.38839900493621826
+                    ]
+                }
+            },
+            {
+                "name" : "Boxes1",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.6399999856948853,
+                        0.47218799591064453,
+                        0.3192330002784729
+                    ]
+                }
+            },
+            {
+                "name" : "StickyNote4",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.612066,
+                        0.612066,
+                        0.612066
+                    ]
+                }
+            },
+            {
+                "name" : "Whiteboard2",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.79311,
+                        0.79311,
+                        0.79311
+                    ]
+                }
+            },
+            {
+                "name" : "BluePencil",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.030764000490307808,
+                        0.800000011920929
+                    ]
+                }
+            },
+            {
+                "name" : "GreenPencil",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.14567600190639496,
+                        0.6399999856948853,
+                        0.0
+                    ]
+                }
+            },
+            {
+                "name" : "RedPencil",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.6266509890556335,
+                        0.0,
+                        0.0
+                    ]
+                }
+            },
+            {
+                "name" : "Bookshelf",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.4913010001182556,
+                        0.3051770031452179,
+                        0.800000011920929
+                    ]
+                }
+            },
+            {
+                "name" : "Hallway",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.784314,
+                        0.784314,
+                        0.784314
+                    ]
+                }
+            },
+            {
+                "name" : "Black",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.00631,
+                        0.00631,
+                        0.00631
+                    ]
+                }
+            },                                                                                                                                                                                               
+            {
+                "name" : "CeilingLight",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.647814,
+                        0.647814,
+                        0.647814
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                }                                    
+            },
+            {
+                "name" : "BlackPlastic",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.00631,
+                        0.00631,
+                        0.00631
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                }                                    
+            },
+            {
+                "name" : "Projector",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.00631,
+                        0.00631,
+                        0.00631
+                    ]
+                }
+            },
+            {
+                "name" : "ScreenEnds",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.028991,
+                        0.028991,
+                        0.028991
+                    ]
+                }
+            },
+            {
+                "name" : "FoamEraser",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.684615,
+                        0.684615,
+                        0.684615
+                    ]
+                }
+            },
+            {
+                "name" : "Whiteboard3",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.05,
+                        0.05,
+                        0.05
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                }                                    
+            },
+            {
+                "name" : "ChairWood",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/wood2.jpg"
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.05,
+                        0.05,
+                        0.05
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ]
+                }                                    
+            },
+            {
+                "name" : "ChairFrame",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.87,
+                        0.87,
+                        0.87
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.25,
+                        0.25,
+                        0.25
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.15,
+                        0.15,
+                        0.15
+                    ]
+                }                                    
+            },
+            {
+                "name" : "ChairStainless",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.07,
+                        0.07,
+                        0.07
+                    ]
+                }                                    
+            },                                    
+            {
+                "name" : "Floor",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.6592240333557129,
+                        0.5924380421638489,
+                        0.517401397228241
+                    ]
+                }
+            },
+            {
+                "name" : "WoodFrame",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/blackboard.jpg"
+                }
+            },
+            {
+                "name" : "WhiteboardFrame",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.056173,
+                        0.056173,
+                        0.056173
+                    ]
+                }
+            },
+            {
+                "name" : "StickyNote3",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.612066,
+                        0.612066,
+                        0.612066
+                    ]
+                }
+            },
+            {
+                "name" : "StickyNote5",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.612066,
+                        0.612066,
+                        0.612066
+                    ]
+                }
+            },
+            {
+                "name" : "StickyNote6",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.612066,
+                        0.612066,
+                        0.612066
+                    ]
+                }
+            },
+            {
+                "name" : "Speakers",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.03598,
+                        0.03598,
+                        0.03598
+                    ]
+                }
+            },
+            {
+                "name" : "Wall",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.4508373439311981,
+                        0.4536627233028412,
+                        0.49960458278656006
+                    ]
+                }
+            },
+            {
+                "name" : "WindowFrame",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.471008,
+                        0.471008,
+                        0.471008
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ]
+                }                                    
+            },
+            {
+                "name" : "Bin1",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.32712534070014954,
+                        0.5785964727401733,
+                        0.2805613875389099
+                    ]
+                }
+            },
+            {
+                "name" : "Rubber",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.6870308518409729,
+                        0.7154654264450073,
+                        0.5604991912841797
+                    ]
+                }
+            },
+            {
+                "name" : "StickyNote2",
+                "type" : "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.612066,
+                        0.612066,
+                        0.612066
+                    ]
+                }
+            },
+            {
+                "name" : "FluorescentTube",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.612066,
+                        0.612066,
+                        0.612066
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.3,
+                        0.3,
+                        0.3
+                    ]
+                }                                    
+            }                                                                                                                                                                                                                                
+        ],
+        "render_objects": [
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh036.obj"
+                },
+                "material": "Walls"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh048.obj"
+                },
+                "material": "FluorescentTube"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh062.obj"
+                },
+                "material": "CeilingLight"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh038.obj"
+                },
+                "material": "FluorescentTube"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh054.obj"
+                },
+                "material": "Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh077.obj"
+                },
+                "material": "Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh052.obj"
+                },
+                "material": "BlackPlastic"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh061.obj"
+                },
+                "material": "Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh031.obj"
+                },
+                "material": "Projector"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh030.obj"
+                },
+                "material": "Projector"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh057.obj"
+                },
+                "material": "Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh023.obj"
+                },
+                "material": "Walls"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh027.obj"
+                },
+                "material": "Walls"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh047.obj"
+                },
+                "material": "Bin2"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh049.obj",
+                    "translation": [
+                        0.0,
+                        -0.07342231273651123,
+                        0.0
+                    ]
+                },
+                "material": "Boxes1"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh022.obj"
+                },
+                "material": "Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh029.obj"
+                },
+                "material": "Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh033.obj"
+                },
+                "material": "Whiteboard"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh040.obj"
+                },
+                "material": "Walls"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh028.obj"
+                },
+                "material": "Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh076.obj"
+                },
+                "material": "ProjectorScreen"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh050.obj"
+                },
+                "material": "ScreenEnds"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh055.obj"
+                },
+                "material": "FlagBase"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh053.obj"
+                },
+                "material": "FoamEraser"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh058.obj"
+                },
+                "material": "ChalkHolder"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh060.obj"
+                },
+                "material": "ChairWood"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh063.obj"
+                },
+                "material": "ChairStainless"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh064.obj"
+                },
+                "material": "ChairFrame"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh037.obj"
+                },
+                "material": "ChairWood"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh067.obj"
+                },
+                "material": "ChairWood"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh073.obj"
+                },
+                "material": "ChairWood"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh024.obj"
+                },
+                "material": "ChairWood"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh041.obj"
+                },
+                "material": "ChairWood"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh026.obj"
+                },
+                "material": "Rubber"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh069.obj"
+                },
+                "material": "ChairWood"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh035.obj",
+                    "scale": [
+                        11.651670455932617,
+                        11.651670455932617,
+                        11.651670455932617
+                    ]
+                },
+                "material": "Floor"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh043.obj"
+                },
+                "material": "WoodFrame"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh072.obj"
+                },
+                "material": "Whiteboard2"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh045.obj"
+                },
+                "material": "StickyNote1"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh044.obj"
+                },
+                "material": "StickyNote2"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh074.obj"
+                },
+                "material": "RedPencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh070.obj"
+                },
+                "material": "BluePencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh078.obj"
+                },
+                "material": "GreenPencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh021.obj"
+                },
+                "material": "Whiteboard3"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh018.obj"
+                },
+                "material": "WhiteboardFrame"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh017.obj"
+                },
+                "material": "Lectern"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh066.obj"
+                },
+                "material": "Lectern"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh056.obj"
+                },
+                "material": "Lectern"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh016.obj"
+                },
+                "material": "Lectern"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh015.obj"
+                },
+                "material": "Lectern"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh014.obj"
+                },
+                "material": "Hallway"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh025.obj"
+                },
+                "material": "WoodFrame"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh046.obj"
+                },
+                "material": "Whiteboard2"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh012.obj"
+                },
+                "material": "BluePencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh011.obj"
+                },
+                "material": "GreenPencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh010.obj"
+                },
+                "material": "GreenPencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh009.obj"
+                },
+                "material": "GreenPencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh008.obj"
+                },
+                "material": "BluePencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh059.obj"
+                },
+                "material": "RedPencil"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh065.obj"
+                },
+                "material": "Bookshelf"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh032.obj"
+                },
+                "material": "StickyNote3"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh007.obj"
+                },
+                "material": "StickyNote4"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh075.obj"
+                },
+                "material": "StickyNote5"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh071.obj"
+                },
+                "material": "StickyNote6"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh039.obj"
+                },
+                "material": "StickyNote7"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh006.obj"
+                },
+                "material": "StickyNote8"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh051.obj"
+                },
+                "material": "Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh013.obj"
+                },
+                "material": "FlagRed"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh005.obj"
+                },
+                "material": "FlagWhite"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh042.obj"
+                },
+                "material": "Walls"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh003.obj"
+                },
+                "material": "Speakers"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh020.obj"
+                },
+                "material": "FluorescentTube"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh002.obj"
+                },
+                "material": "CeilingLight"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh019.obj"
+                },
+                "material": "Wall"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh068.obj"
+                },
+                "material": "WindowFrame"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh001.obj"
+                },
+                "material": "Bin1"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh004.obj",
+                    "translation": [
+                        0.0,
+                        -0.07342231273651123,
+                        0.0
+                    ]
+                },
+                "material": "Boxes1"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh034.obj",
+                    "translation": [
+                        0.0,
+                        -0.07342231273651123,
+                        0.0
+                    ]
+                },
+                "material": "Boxes2"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh000.obj",
+                    "translation": [
+                        0.0,
+                        -0.07342231273651123,
+                        0.0
+                    ]
+                },
+                "material": "Boxes1"
+            }                                                        
+        ],
+        "lights": [
+            {
+                "type": "env",
+                "path": "../HDR/skydome_mirror.hdr",
+                "rotation": [
+                    -79.526,
+                    81.1459,
+                    10.5975
+                ]                
+            },
+            {
+                "type": "directional",
+                "radiance": [
+                    10.0,
+                    10.0,
+                    10.0
+                ],
+                "direction": [
+                    0.865163,
+                    -0.48432,
+                    -0.130102
+                ]                
+            }
+        ] 
+    }
+}

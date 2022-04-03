@@ -1,0 +1,491 @@
+{
+    "camera": {
+        "look_at": [
+            0,
+            0.16,
+            -0.1
+        ],
+        "focal_distance": 1.0,
+        "fov": 34.000000,
+        "pos": [
+            0,
+            0.26,
+            0.7
+        ],
+        "aspect": 0.7777777778,
+        "type": "pin_hole",
+        "up": [
+            0.000000,
+            1.000000,
+            0.000000
+        ]
+    },    
+    "renderer": {
+        "width": 700,
+        "height": 900,
+        "spp": 40,
+        "thread_count": 8,
+        "output": "result",
+        "type" : "path_tracer",
+        "depth": 10,
+        "direct_loop": 1,
+        "rr_depth": 10,
+        "rr_coef": 0.85
+    },
+    "post_process": [
+        {
+            "type": "oidn_denoise"
+        },        
+        {
+            "type": "tonemapping",
+            "lum": 1.0
+        },
+        {
+            "type": "linear_to_srgb"
+        }
+    ],
+    "scene": {
+        "accelerator": {
+            "type": "embree"
+        },
+        "materials" : [
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        0.37867626547813416,
+                        0.013473397120833397
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]                    
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.8,
+                        0.8,
+                        0.8
+                    ]
+                },                
+                "name": "Plastic_Orange"                
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]                    
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },                
+                "name": "Plastic_Black"                
+            },
+            {
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specTrans": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specTransRoughness": {
+                    "type": "constant",
+                    "value": [
+                        0.23,
+                        0.23,
+                        0.23
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                },
+                "name" : "Glass"                                
+            },
+            {
+                "type": "specular_transmission",
+                "reflect_color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "refract_color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "eta_i": 1.0,
+                "eta_t": 1.5,
+                "name": "RealGlass"                
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },                
+                "name": "Metal"                
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.578596,
+                        0.578596,
+                        0.578596
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]                    
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.8,
+                        0.8,
+                        0.8
+                    ]
+                },                
+                "name": "Floor"                
+            }                                                
+        ],
+        "render_objects": [
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh013.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh008.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh010.obj"
+                },
+                "material": "Glass"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh009.obj"
+                },
+                "material": "Plastic_Orange"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh015.obj"
+                },
+                "material": "Metal"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh012.obj"
+                },
+                "material": "Plastic_Orange"
+            }
+            ,
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh016.obj"
+                },
+                "material": "Plastic_Orange"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh017.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh018.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh019.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh007.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh006.obj"
+                },
+                "material": "Plastic_Orange"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh005.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh003.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh002.obj"
+                },
+                "material": "Metal"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh001.obj"
+                },
+                "material": "Plastic_Orange"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh011.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh000.obj"
+                },
+                "material": "Plastic_Orange"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh014.obj"
+                },
+                "material": "Plastic_Black"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/Mesh004.obj"
+                },
+                "material": "Floor"
+            },
+            {
+                "shape": {
+                    "type": "rectangle",
+                    "pa": [
+                        -0.359309,
+                        0.449693,
+                        -0.010809
+                    ],
+                    "pb": [
+                        -0.1966,
+                        0.449693,
+                        0.339
+                    ],
+                    "pd": [
+                        -0.359309,
+                        0.027337,
+                        -0.010809
+                    ],
+                    "pc": [
+                        -0.1966,
+                        0.027337,
+                        0.339
+                    ]
+                },
+                "emittance": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]                
+            },
+            {
+                "shape": {
+                    "type": "rectangle",
+                    "pa": [
+                        0.320673,
+                        0.027337,
+                        0.228975
+                    ],
+                    "pb": [
+                        0.320673,
+                        0.476,
+                        0.228975
+                    ],
+                    "pd": [
+                        0.320673,
+                        0.027337,
+                        -0.1375
+                    ],
+                    "pc": [
+                        0.320673,
+                        0.476,
+                        -0.1375
+                    ]
+                },
+                "emittance": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]                
+            },
+            {
+                "shape": {
+                    "type": "rectangle",
+                    "pa": [
+                        0.230128,
+                        0.50385,
+                        0.267372
+                    ],
+                    "pb": [
+                        -0.230128,
+                        0.50385,
+                        0.267372
+                    ],
+                    "pd": [
+                        0.230128,
+                        0.50385,
+                        -0.1927
+                    ],
+                    "pc": [
+                        -0.230128,
+                        0.50385,
+                        -0.1927
+                    ]
+                },
+                "emittance": [
+                    2.0,
+                    2.0,
+                    2.0
+                ]                
+            }                                                
+        ]
+    }
+}

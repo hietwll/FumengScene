@@ -1,0 +1,523 @@
+{
+    "camera": {
+        "look_at": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "focal_distance": 1.0,
+        "fov": 35.000000,
+        "pos": [
+            -15.0,
+            15.0,
+            0.0
+        ],
+        "aspect": 1.7777777778,
+        "type": "pin_hole",
+        "up": [
+            0.000000,
+            1.000000,
+            0.000000
+        ]
+    },    
+    "renderer": {
+        "width": 1280,
+        "height": 720,
+        "spp": 40,
+        "thread_count": 8,
+        "output": "result",
+        "type" : "path_tracer",
+        "depth": 10,
+        "direct_loop": 1,
+        "rr_depth": 10,
+        "rr_coef": 0.85
+    },
+    "post_process": [
+        {
+            "type": "oidn_denoise"
+        },        
+        {
+            "type": "tonemapping",
+            "lum": 1.0
+        },
+        {
+            "type": "linear_to_srgb"
+        }
+    ],
+    "scene": {
+        "accelerator": {
+            "type": "embree"
+        },
+        "materials" : [
+            {
+                "name" : "orange",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        0.186,
+                        0.0
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.001,
+                        0.001,
+                        0.001
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]                    
+                },
+                "clearcoat": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                },
+                "clearcoatGloss": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                }                
+            },
+            {
+                "type": "specular_transmission",
+                "reflect_color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "refract_color": [
+                    1.0,
+                    1.0,
+                    1.0
+                ],
+                "eta_i": 1.0,
+                "eta_t": 1.45,
+                "name": "glass"                
+            },
+            {
+                "name" : "silver",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.9,
+                        0.9,
+                        0.9
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]                    
+                },
+                "anisotropic": {
+                    "type": "constant",
+                    "value": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ]                    
+                }                                
+            },
+            {
+                "name" : "ring_silver",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.01,
+                        0.01,
+                        0.01
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]                    
+                }                
+            },
+            {
+                "name" : "off_white",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        0.94,
+                        0.8
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]                    
+                }                
+            },
+            {
+                "name" : "pingpong",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.93,
+                        0.89,
+                        0.85
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ]                    
+                }                
+            },
+            {
+                "name" : "marb1",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.026,
+                        0.147,
+                        0.075
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.077,
+                        0.077,
+                        0.077
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]                    
+                },
+                "clearcoat": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                },
+                "clearcoatGloss": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                }                                
+            },
+            {
+                "name" : "marb2",
+                "type" : "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.099,
+                        0.24,
+                        0.134
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.077,
+                        0.077,
+                        0.077
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.5,
+                        0.5,
+                        0.5
+                    ]                    
+                },
+                "clearcoat": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]                    
+                },
+                "clearcoatGloss": {
+                    "type": "constant",
+                    "value": [
+                        0.93,
+                        0.93,
+                        0.93
+                    ]                    
+                }                                
+            }                                                                                                                        
+        ],
+        "render_objects": [
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/glass.obj",
+                    "translation": [
+                        -0.57,
+                        1.87,
+                        6.55
+                    ]                     
+                },
+                "material": "glass"               
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/chrome.obj",
+                    "translation": [
+                        0.4,
+                        1.86,
+                        -6.59
+                    ]                    
+                },
+                "material": "silver"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/plate.obj",
+                    "translation": [
+                        0.0,
+                        0.36,
+                        0.0
+                    ]                    
+                },
+                "material": "off_white"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/floor.obj"                   
+                },
+                "material": "off_white"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/orange.obj",
+                    "translation": [
+                        1.646,
+                        1.6861,
+                        3.5662
+                    ]                    
+                },
+                "material": "orange"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/ring1.obj",
+                    "translation": [
+                        -0.308737,
+                        0.805763,
+                        -1.42968
+                    ]                    
+                },
+                "material": "ring_silver"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/ring2.obj",
+                    "translation": [
+                        -0.6706,
+                        0.808472,
+                        0.626798
+                    ]                    
+                },
+                "material": "ring_silver"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/ring3.obj",
+                    "translation": [
+                        -1.44541,
+                        0.808472,
+                        1.72607
+                    ]                    
+                },
+                "material": "ring_silver"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/marb1.obj",
+                    "translation": [
+                        -3.78,
+                        0.88,
+                        -0.84
+                    ]                    
+                },
+                "material": "marb1"                
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/marb2.obj",
+                    "translation": [
+                        -3.746,
+                        0.969453,
+                        0.974294
+                    ]                    
+                },
+                "material": "marb2"                               
+            },            
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/pingpong.obj",
+                    "translation": [
+                        -3.14,
+                        1.51,
+                        -4.12
+                    ]                    
+                },
+                "material": "pingpong"                
+            },                                             
+            {
+                "shape": {
+                    "type": "sphere",
+                    "radius": 6.0,
+                    "translation": [
+                        0.0,
+                        39.0,
+                        -43.9
+                    ]
+                },
+                "emittance": [
+                    80.0,
+                    80.0,
+                    80.0
+                ]                
+            }                                                                        
+        ]
+    }
+}

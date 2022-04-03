@@ -1,0 +1,932 @@
+{
+    "camera": {
+        "look_at": [
+            0.0,
+            0.8,
+            0.0
+        ],
+        "focal_distance": 0.01,
+        "fov": 35.0,
+        "pos": [
+            -4.5,
+            1.6,
+            0.0
+        ],
+        "aspect": 1.777777778,
+        "type": "pin_hole",
+        "up": [
+            0.0,
+            1.0,
+            0.0
+        ]
+    },
+    "renderer": {
+        "width": 1280,
+        "height": 720,
+        "spp": 40,
+        "thread_count": 8,
+        "output": "result",
+        "type": "path_tracer",
+        "depth": 10,
+        "direct_loop": 1,
+        "rr_depth": 6,
+        "rr_coef": 0.85
+    },
+    "post_process": [
+        {
+            "type": "oidn_denoise"
+        },     
+        {
+            "type": "tonemapping",
+            "lum": 1.0
+        },
+        {
+            "type": "linear_to_srgb"
+        }
+    ],
+    "scene": {
+        "accelerator": {
+            "type": "embree"
+        },
+        "render_objects": [
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/bucket.obj"
+                },
+                "material": "bucket"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/chair_leg.obj"
+                },
+                "material": "chair_leg"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/chair_seat.obj"
+                },
+                "material": "chair_seat"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/plant.obj"
+                },
+                "material": "plant"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/floor.obj"
+                },
+                "material": "floor"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/left_front_wall.obj"
+                },
+                "material": "left_front_wall"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/rightwall.obj"
+                },
+                "material": "rightwall"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/picture.obj"
+                },
+                "material": "picture"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/table_glass.obj"
+                },
+                "material": "table_glass"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/table_leg.obj"
+                },
+                "material": "table_leg"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/vase.obj"
+                },
+                "material": "vase"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/shelf_book1.obj"
+                },
+                "material": "shelf_book1"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/shelf_book2.obj"
+                },
+                "material": "shelf_book2"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book1.obj"
+                },
+                "material": "book1"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book2.obj"
+                },
+                "material": "book2"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book3.obj"
+                },
+                "material": "book3"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book4.obj"
+                },
+                "material": "book4"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book6.obj"
+                },
+                "material": "book6"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book7.obj"
+                },
+                "material": "book7"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book8.obj"
+                },
+                "material": "book8"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book9.obj"
+                },
+                "material": "book9"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book10.obj"
+                },
+                "material": "book10"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book11.obj"
+                },
+                "material": "book11"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book13.obj"
+                },
+                "material": "book13"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book14.obj"
+                },
+                "material": "book14"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book15.obj"
+                },
+                "material": "book15"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book16.obj"
+                },
+                "material": "book16"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book17.obj"
+                },
+                "material": "book17"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/cupboards.obj"
+                },
+                "material": "cupboards"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/shelf_object2.obj"
+                },
+                "material": "shelf_object2"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/shelf.obj"
+                },
+                "material": "shelf"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/book18.obj"
+                },
+                "material": "book18"
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/light1.obj"
+                },
+                "material": "light1",
+                "emittance": [
+                    4.0,
+                    4.5,
+                    5.0
+                ]
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/light2.obj"
+                },
+                "material": "light2",
+                "emittance": [
+                    4.0,
+                    4.5,
+                    5.0
+                ]
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/light3.obj"
+                },
+                "material": "light3",
+                "emittance": [
+                    4.0,
+                    4.5,
+                    5.0
+                ]
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/toplight.obj"
+                },
+                "material": "toplight",
+                "emittance": [
+                    1.0,
+                    1.0,
+                    1.0
+                ]
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/frontlight.obj"
+                },
+                "material": "frontlight",
+                "emittance": [
+                    0.8,
+                    0.75,
+                    0.7
+                ]
+            },
+            {
+                "shape": {
+                    "type": "triangle_mesh",
+                    "path": "model/frontlight2.obj"
+                },
+                "material": "frontlight2",
+                "emittance": [
+                    1.0,
+                    0.77,
+                    0.65
+                ]
+            }
+        ],
+        "materials": [
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/box.jpg"
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ]
+                },
+                "name": "bucket"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "name": "chair_leg"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.075,
+                        0.075,
+                        0.075
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ]
+                },
+                "name": "chair_seat"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.009,
+                        0.009,
+                        0.009
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.05,
+                        0.05,
+                        0.05
+                    ]
+                },
+                "clearcoat": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "clearcoatGloss": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "plant"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/floor.jpg"
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.05,
+                        0.05,
+                        0.05
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ]
+                },
+                "name": "floor"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.842,
+                        0.842,
+                        0.842
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ]
+                },
+                "name": "left_front_wall"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.016,
+                        0.047,
+                        0.002
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ]
+                },
+                "name": "rightwall"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/painting.jpg"
+                },
+                "name": "picture"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.73,
+                        0.85,
+                        0.85
+                    ]
+                },
+                "specTrans": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "specTransRoughness": {
+                    "type": "constant",
+                    "value": [
+                        0.1,
+                        0.1,
+                        0.1
+                    ]
+                },
+                "specular": {
+                    "type": "constant",
+                    "value": [
+                        0.4,
+                        0.4,
+                        0.4
+                    ]                    
+                },                
+                "name": "table_glass"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "metallic": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.15,
+                        0.15,
+                        0.15
+                    ]
+                },
+                "name": "table_leg"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.787,
+                        0.758,
+                        0.737
+                    ]
+                },
+                "clearcoat": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "clearcoatGloss": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ]
+                },
+                "name": "vase"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/shelfbook1.jpg"
+                },
+                "name": "shelf_book1"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/shelfbook2.jpg"
+                },
+                "name": "shelf_book2"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book1.jpg"
+                },
+                "name": "book1"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book2.jpg"
+                },
+                "name": "book2"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book3.jpg"
+                },
+                "name": "book3"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book4.jpg"
+                },
+                "name": "book4"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book6.jpg"
+                },
+                "name": "book6"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book7.jpg"
+                },
+                "name": "book7"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book8.jpg"
+                },
+                "name": "book8"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book9.jpg"
+                },
+                "name": "book9"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book10.jpg"
+                },
+                "name": "book10"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book11.jpg"
+                },
+                "name": "book11"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book3.jpg"
+                },
+                "name": "book13"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book14.jpg"
+                },
+                "name": "book14"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book15.jpg"
+                },
+                "name": "book15"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book16.jpg"
+                },
+                "name": "book16"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book17.jpg"
+                },
+                "name": "book17"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.009,
+                        0.009,
+                        0.009
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.05,
+                        0.05,
+                        0.05
+                    ]
+                },
+                "clearcoat": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "clearcoatGloss": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "cupboards"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.009,
+                        0.009,
+                        0.009
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.05,
+                        0.05,
+                        0.05
+                    ]
+                },
+                "clearcoat": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "clearcoatGloss": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "shelf_object2"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        0.842,
+                        0.842,
+                        0.842
+                    ]
+                },
+                "roughness": {
+                    "type": "constant",
+                    "value": [
+                        0.2,
+                        0.2,
+                        0.2
+                    ]
+                },
+                "name": "shelf"
+            },
+            {
+                "type": "disney",
+                "basecolor": {
+                    "type": "image",
+                    "path": "texture/book18.jpg"
+                },
+                "name": "book18"
+            },
+            {
+                "type": "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "light1"
+            },
+            {
+                "type": "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "light2"
+            },
+            {
+                "type": "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "light3"
+            },
+            {
+                "type": "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "toplight"
+            },
+            {
+                "type": "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "frontlight"
+            },
+            {
+                "type": "lambert_diffuse",
+                "basecolor": {
+                    "type": "constant",
+                    "value": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "name": "frontlight2"
+            }
+        ]
+    }
+}
